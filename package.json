@@ -1,0 +1,25 @@
+{
+  "name": "url-shortener",
+  "description": "Schema for a URL shortener with a REST API",
+  "license": "UNLICENSED",
+  "dependencies": {
+    "@prisma/client": "3.4.2"
+  },
+  "devDependencies": {
+    "@types/faker": "5.5.9",
+    "@types/node": "16.11.7",
+    "@vercel/node": "1.12.1",
+    "faker": "5.5.3",
+    "prisma": "3.4.2",
+    "ts-node": "10.4.0",
+    "typescript": "4.4.4"
+  },
+  "prisma": {
+    "seed": "ts-node prisma/seed"
+  },
+  "scripts": {
+    "init": "prisma db push && prisma db seed",
+    "dev": "ts-node ./sandbox.ts",
+    "build": "PRISMA_CLIENT_ENGINE_TYPE='dataproxy' prisma generate"
+  }
+}
